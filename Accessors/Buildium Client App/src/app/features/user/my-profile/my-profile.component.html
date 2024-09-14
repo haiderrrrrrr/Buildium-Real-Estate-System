@@ -1,0 +1,217 @@
+<div
+  class="container"
+  style="
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  "
+>
+  <br /><br /><br />
+  <ul class="nav nav-tabs user-navbar" style="border-bottom: 2px solid #ddd">
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        [routerLink]="['/profile']"
+        style="
+          color: #ffffff;
+          background-color: #4caf50;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >Profile</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/edit-profile']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >Edit Profile</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/cart']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >My Cart</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/my-order']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >My Order</a
+      >
+    </li>
+  </ul>
+  <br />
+  <div class="row justify-content-center">
+    <div
+      class="card"
+      style="
+        border: none;
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        width: 100%;
+      "
+    >
+      <h6
+        class="card-header text-center"
+        style="
+          background-color: #4caf50;
+          color: white;
+          padding: 10px;
+          font-size: 18px;
+          font-weight: bold;
+          border-radius: 8px 8px 0 0;
+        "
+      >
+        My Profile
+      </h6>
+      <div class="card-body" style="padding: 20px">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="slider-wrapper">
+              <div
+                class="customer-photo border mb-3"
+                style="
+                  width: 150px;
+                  height: 150px;
+                  border-radius: 50%;
+                  overflow: hidden;
+                  display: inline-block;
+                "
+              >
+                <img
+                  *ngIf="customer.customerPictureName"
+                  [src]="customerPhotoUrl"
+                  alt="My Photo"
+                  style="width: 100%; height: auto; object-fit: cover"
+                />
+              </div>
+              <h4 style="color: #4caf50; text-align: center">
+                {{ customer?.customerName }}
+              </h4>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-6">
+                <p><strong>ID:</strong> {{ customer?.customerId }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Name:</strong> {{ customer?.customerName }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Father name:</strong> {{ customer?.fatherName }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Mother name:</strong> {{ customer?.motherName }}</p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Permanent Address:</strong>
+                  {{ customer?.permanentAddress }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Present Address:</strong>
+                  {{ customer?.presentAddress }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Spouse name:</strong> {{ customer?.spouseName }}</p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Date of Birth:</strong>
+                  <span *ngIf="customer?.dob">{{
+                    customer?.dob | date : "d-MMM-y"
+                  }}</span>
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>NID/Birth ID/Passport No.:</strong>
+                  {{ customer?.nid }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Nationality:</strong>
+                  {{ customer?.nationalityDisplay }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Mobile:</strong> {{ customer?.mobile }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Email:</strong> {{ customer?.email }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Telephone:</strong> {{ customer?.telephone }}</p>
+              </div>
+              <div class="col-md-6">
+                <p><strong>Designation:</strong> {{ customer?.designation }}</p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Office Address:</strong> {{ customer?.officeAddress }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Contact Person:</strong> {{ customer?.contactPerson }}
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p>
+                  <strong>Contact Person Mobile:</strong>
+                  {{ customer?.cpMobile }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-3">
+          <button
+            class="btn btn-primary"
+            [routerLink]="['/edit-profile']"
+            style="
+              background-color: #4caf50;
+              border: none;
+              padding: 10px 20px;
+              font-size: 16px;
+              border-radius: 5px;
+              color: white;
+            "
+          >
+            Edit Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+</div>

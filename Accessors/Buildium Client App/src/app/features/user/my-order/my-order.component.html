@@ -1,0 +1,174 @@
+<div
+  class="container"
+  style="
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  "
+>
+  <br />
+  <br />
+  <br />
+  <ul class="nav nav-tabs user-navbar" style="border-bottom: 2px solid #ddd">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/profile']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >Profile</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/edit-profile']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >Edit Profile</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [routerLink]="['/cart']"
+        style="
+          color: #333;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >My Cart</a
+      >
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link active"
+        [routerLink]="['/my-order']"
+        style="
+          color: #ffffff;
+          background-color: #4caf50;
+          font-weight: bold;
+          padding: 10px 15px;
+          text-transform: uppercase;
+        "
+        >My Order</a
+      >
+    </li>
+  </ul>
+  <br />
+
+  <div
+    class="card"
+    style="
+      border: none;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    "
+  >
+    <h6
+      class="card-header"
+      style="
+        background-color: #4caf50;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        border-radius: 8px 8px 0 0;
+      "
+    >
+      Order List
+    </h6>
+    <div class="card-body" style="padding: 20px">
+      <div class="table-responsive">
+        <table
+          class="table table-sm table-hover table-bordered table-striped"
+          style="border-collapse: collapse; width: 100%"
+        >
+          <thead class="thead-light" style="background-color: #f0f0f0">
+            <tr style="border-bottom: 2px solid #ddd">
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Serial
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Order No
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Order Date
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Order Status
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Item Name
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Item Type
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Settlement Price
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Booking Amount
+              </th>
+              <th style="padding: 12px; font-weight: bold; color: #333">
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="let trn of customerTrnList; let i = index"
+              style="border-bottom: 1px solid #ddd"
+            >
+              <td style="padding: 12px">{{ i + 1 }}</td>
+              <td style="padding: 12px">
+                <a
+                  [routerLink]="['/order-info', trn.trnNo]"
+                  style="
+                    color: #4caf50;
+                    text-decoration: none;
+                    font-weight: bold;
+                  "
+                  >{{ trn.trnId }}</a
+                >
+              </td>
+              <td style="padding: 12px">
+                {{ trn.trnDate | date : "d-MMM-y" }}
+              </td>
+              <td style="padding: 12px">{{ trn.approveFlagName }}</td>
+              <td style="padding: 12px">
+                {{ trn.itemName }} ({{ trn.itemId }})
+              </td>
+              <td style="padding: 12px">{{ trn.itemTypeName }}</td>
+              <td style="padding: 12px" class="text-right">
+                {{ trn.settlementPrice }}
+              </td>
+              <td style="padding: 12px" class="text-right">
+                {{ trn.bookingAmount }}
+              </td>
+              <td style="padding: 12px" class="text-center">
+                <a
+                  [routerLink]="['/order-info', trn.trnNo]"
+                  style="color: #4caf50"
+                  ><i class="fa fa-eye fa-lg"></i
+                ></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+                       ╔══════════════════════════╗
+                       ║      B U I L D I U M     ║
+                       ║   S W A G G E R   A P I  ║
+                       ╚══════════════════════════╝
+--------------------------------------------------------------------------
+Application Name : Buildium Real Estate Management System
+Application Version : API.v1
+Application Developed By: Haider Ali
+--------------------------------------------------------------------------

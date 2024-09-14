@@ -1,0 +1,5 @@
+Swager API UI
+http://localhost:8183/nahal/v1/swagger-ui.html
+
+// Oracle JDBC Driver install
+install:install-file -Dfile=ojdbc7.jar -DgroupId=com.oracle  -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar

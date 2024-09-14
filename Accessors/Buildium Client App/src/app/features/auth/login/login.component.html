@@ -1,0 +1,258 @@
+<app-header></app-header>
+<br />
+<br />
+<div
+  class="login-page-wrapper"
+  style="background-color: #f0f2f5; padding: 30px 0"
+>
+  <div class="login-wrapper">
+    <div class="login-form-wrapper">
+      <div class="container">
+        <div class="row justify-content-center">
+          <!-- Login Form -->
+          <div class="col-md-5">
+            <div
+              class="card p-4 mt-5"
+              style="
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                background: #fff;
+              "
+            >
+              <form class="login-form" (ngSubmit)="atemptLogin()">
+                <div class="singin-logo text-center mb-4">
+                  <img
+                    src="assets/images/logo/logo.png"
+                    alt="Logo"
+                    style="width: 100px"
+                  />
+                </div>
+                <div class="text-center">
+                  <h5
+                    class="pb20 text-regular"
+                    style="font-weight: bold; font-size: 22px; color: #333"
+                  >
+                    User Sign in
+                  </h5>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee" />
+                <div class="input-group input-group--user-name mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-user fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    [(ngModel)]="username"
+                    required
+                    name="username"
+                    placeholder="E-mail or Mobile or Customer ID"
+                    type="text"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <!--/.input-group-->
+                <div class="input-group input-group--password mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-unlock-alt fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    [(ngModel)]="password"
+                    required
+                    type="password"
+                    name="password"
+                    class="form-control form-control-lg bg-white"
+                    id="password"
+                    placeholder="Password"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="text-center mt-4">
+                  <input
+                    type="submit"
+                    class="btn btn-lg btn-primary"
+                    value="SIGN IN"
+                    style="
+                      background: linear-gradient(45deg, #007bff, #0056b3);
+                      border: none;
+                      border-radius: 50px;
+                      padding: 12px 50px;
+                      font-weight: bold;
+                      color: white;
+                      transition: background 0.3s ease;
+                    "
+                  />
+                </div>
+              </form>
+              <!-- End Form-->
+            </div>
+          </div>
+
+          <!-- Registration Form -->
+          <div class="col-md-5">
+            <div
+              class="card p-4 mt-5"
+              style="
+                border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+                background: #fff;
+              "
+            >
+              <form class="ragistation-form" (ngSubmit)="onClickSave()">
+                <div class="singin-logo text-center">
+                  <img
+                    src="assets/images/logo/logo.png"
+                    alt="Logo"
+                    style="width: 100px"
+                  />
+                </div>
+                <div class="text-center">
+                  <h5
+                    class="mt-4 text-regular"
+                    style="font-weight: bold; font-size: 22px; color: #333"
+                  >
+                    Registration
+                  </h5>
+                </div>
+                <hr style="border: 0; border-top: 1px solid #eee" />
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-users fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="customerName"
+                    [(ngModel)]="customer.customerName"
+                    required
+                    placeholder="Enter Your Name"
+                    type="text"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-envelope fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="email"
+                    [(ngModel)]="customer.email"
+                    required
+                    placeholder="Enter Your E-mail Account"
+                    type="email"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-phone fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="mobile"
+                    [(ngModel)]="customer.mobile"
+                    required
+                    placeholder="Enter Your Phone Number"
+                    type="text"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-key fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="password"
+                    [(ngModel)]="customer.password"
+                    required
+                    placeholder="Create Password"
+                    type="password"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="input-group mt-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text bg-transparent border-0"
+                      ><i class="fa fa-key fa-lg text-primary"></i
+                    ></span>
+                  </div>
+                  <input
+                    name="confirmPassword"
+                    [(ngModel)]="customer.confirmPassword"
+                    required
+                    placeholder="Re-enter Password"
+                    type="password"
+                    class="form-control form-control-lg bg-white"
+                    style="
+                      border-radius: 50px;
+                      padding: 15px;
+                      border: 1px solid #ccc;
+                    "
+                  />
+                </div>
+                <div class="text-center mt-4">
+                  <button
+                    class="btn btn-lg btn-primary btn-block text-bolder"
+                    type="Submit"
+                    style="
+                      background: linear-gradient(45deg, #28a745, #218838);
+                      border: none;
+                      border-radius: 50px;
+                      padding: 12px;
+                      font-weight: bold;
+                      color: white;
+                      transition: background 0.3s ease;
+                    "
+                  >
+                    Register
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/.login-form-wrapper-->
+  </div>
+  <br />
+  <br />
+</div>
+<app-footer></app-footer>
+<nl-popup></nl-popup>

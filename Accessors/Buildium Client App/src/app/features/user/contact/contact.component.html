@@ -1,0 +1,246 @@
+<!-- Start page content -->
+<section
+  id="page-content"
+  class="page-wrapper"
+  style="
+    background-color: #f0f0f0;
+    padding: 50px 0;
+    font-family: 'Poppins', sans-serif;
+  "
+>
+  <!-- CONTACT AREA START -->
+  <div class="contact-area" style="padding: 50px 0">
+    <div class="container" style="max-width: 1200px; margin: 0 auto">
+      <div
+        class="row"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+        "
+      >
+        <div class="col-sm-5 col-xs-12">
+          <!-- Get In Touch Box -->
+          <div
+            class="get-in-toch"
+            style="
+              background: #ffffff;
+              padding: 25px;
+              border-radius: 10px;
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+              transition: box-shadow 0.3s ease;
+            "
+          >
+            <div class="section-title mb-30" style="margin-bottom: 15px">
+              <h2
+                style="
+                  font-size: 30px;
+                  color: #2c3e50;
+                  border-bottom: 3px solid #ff8c00;
+                  padding-bottom: 8px;
+                  display: inline-block;
+                "
+              >
+                GET IN TOUCH
+              </h2>
+            </div>
+            <div
+              class="contact-desc mb-50"
+              style="margin-bottom: 30px; color: #555; line-height: 1.6"
+            >
+              <p>
+                We at
+                <span
+                  data-placement="top"
+                  data-toggle="tooltip"
+                  data-original-title="The name you can trust"
+                  class="tooltip-content"
+                  style="color: #ff8c00; font-weight: bold"
+                  >Buildium Real Estate Management</span
+                >
+                always respect and value your dreams. Stay in touch with us and
+                feel free to call if there's anything we can assist with.
+              </p>
+            </div>
+            <ul
+              class="contact-address"
+              style="list-style: none; padding-left: 0; line-height: 1.4"
+            >
+              <li
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <div class="contact-address-icon" style="margin-right: 12px">
+                  <img
+                    src="assets/images/icons/location-2.png"
+                    alt="Location"
+                    style="width: 25px"
+                  />
+                </div>
+                <div class="contact-address-info" style="color: #333">
+                  <span>Shop no-34, Floor 4, Emporium Mall, Main Highway</span
+                  ><br />
+                  <span>Near Lake View Park, Islamabad</span>
+                </div>
+              </li>
+              <li
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <div class="contact-address-icon" style="margin-right: 12px">
+                  <img
+                    src="assets/images/icons/phone-3.png"
+                    alt="Phone"
+                    style="width: 25px"
+                  />
+                </div>
+                <div class="contact-address-info" style="color: #333">
+                  <span>Telephone: 051-4576140</span><br />
+                  <span>Mobile: +(92)333-5656801</span>
+                </div>
+              </li>
+              <li
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <div class="contact-address-icon" style="margin-right: 12px">
+                  <img
+                    src="assets/images/icons/world.png"
+                    alt="Email"
+                    style="width: 25px"
+                  />
+                </div>
+                <div class="contact-address-info" style="color: #333">
+                  <span>Email: buildiumrealestatesystem@gmail.com</span><br />
+                  <span
+                    >Web:
+                    <a
+                      href="#"
+                      target="_blank"
+                      style="color: #ff8c00; text-decoration: none"
+                      >www.buildiumrealestate.com</a
+                    ></span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Leave a Message Form -->
+        <div class="col-sm-7 col-xs-12">
+          <div
+            class="contact-messge contact-bg"
+            id="leaveMessage"
+            style="
+              background: #ffffff;
+              padding: 25px;
+              border-radius: 10px;
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+              transition: box-shadow 0.3s ease;
+            "
+          >
+            <div class="leave-review">
+              <h5 style="font-size: 24px; color: #2c3e50; margin-bottom: 15px">
+                Leave a Message
+              </h5>
+              <form id="contact-form" method="post">
+                <input
+                  class="form-control"
+                  type="text"
+                  name="cpName"
+                  placeholder="Your name *"
+                  [(ngModel)]="rlContact.cpName"
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                  "
+                />
+                <input
+                  class="form-control"
+                  type="email"
+                  name="cpEmail"
+                  placeholder="Email *"
+                  [(ngModel)]="rlContact.cpEmail"
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                  "
+                />
+                <input
+                  class="form-control"
+                  type="text"
+                  name="cpMobile"
+                  placeholder="Phone number *"
+                  [(ngModel)]="rlContact.cpMobile"
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                  "
+                />
+                <textarea
+                  class="form-control"
+                  name="cpComments"
+                  placeholder="Write here"
+                  [(ngModel)]="rlContact.cpComments"
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    margin-bottom: 8px;
+                    border: 1px solid #ddd;
+                    border-radius: 5px;
+                    height: 120px;
+                  "
+                ></textarea>
+                <button
+                  type="submit"
+                  class="submit-btn-1"
+                  (click)="onclickSendContactMail(); animateNeonBorder()"
+                  style="
+                    padding: 12px 25px;
+                    background-color: #ff8c00;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-size: 16px;
+                  "
+                >
+                  SUBMIT
+                </button>
+              </form>
+              <p class="form-messege mb-0"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br /><br />
+</section>
+<!-- End page content -->
+
+<script>
+  function animateNeonBorders() {
+    const getInTouchBox = document.getElementById('getInTouchBox');
+    const leaveMessageBox = document.getElementById('leaveMessageBox');
+    
+    // Neon glow for Get in Touch Box
+    getInTouchBox.style.boxShadow = '0 0 10px #ff8c00, 0 0 20px #ff8c00, 0 0 30px #ff8c00';
+    
+    // Neon glow for Leave a Message Box
+    leaveMessageBox.style.boxShadow = '0 0 10px #ff8c00, 0 0 20px #ff8c00, 0 0 30px #ff8c00';
+
+    // Reset glow after 1.5 seconds
+    setTimeout(() => {
+      getInTouchBox.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.1)';
+      leaveMessageBox.style.boxShadow = '0 6px 20px rgba(0, 0, 0, 0.1)';
+    }, 1500);
+  }
+</script>
